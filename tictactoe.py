@@ -8,18 +8,6 @@ def printBoard(board):
 		print(str(row)+str(i))
 		row +=1
 
-def temphumanMove(board):
-	while True:
-		printBoard(board)
-		x = int(input("column: "))
-		y = int(input("row: "))
-		if board[y][x] != " ":
-			print("Pick an empty slot")
-		else:
-			board[y][x] = "o"
-			printBoard(board)
-			return board
-
 def humanMove(board):
 	while True:
 		printBoard(board)
@@ -111,7 +99,6 @@ def minimax(board,isMaximizing):
 					board[i][j] = " "
 					bestScore = min(score, bestScore)
 		return bestScore
-
 
 
 humanToMove = True
